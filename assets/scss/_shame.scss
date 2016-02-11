@@ -1,0 +1,9 @@
+a {
+  color: color(primary);
+}
+
+.skip-link {
+    position: absolute;
+    top:-100px;
+    z-index: 9999; 
+}

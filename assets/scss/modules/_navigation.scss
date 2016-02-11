@@ -1,0 +1,148 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+	background-color: color(gray5);
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+		background-color: color(gray5);
+		width: 100%;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 1.5em;
+			left: -999em;
+			z-index: 99999;
+			background-color: color(white);
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 100%;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+	li {
+		float: left;
+		position: relative;
+		width: 100%;
+
+		&:hover > a,
+		&.focus > a {
+		}
+		
+		&:last-child a {
+			padding-bottom: 1em;
+		}
+
+		&.menu-item-has-children:after {
+			content: "+";
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			border-left: 1px solid color(gray20);
+			padding: 1vh 1vw;
+			cursor: pointer;
+			background-color: color(gray5);
+		}
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		padding: .5em 1em;
+
+		&:hover {
+
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+	background-color: color(gray10);
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.main-navigation {
+		background-color: transparent;
+
+		ul {
+			li {
+				display: inline-block;
+				width: auto;
+
+				a {
+				}
+			}
+		}
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}

@@ -1,0 +1,72 @@
+// ==========
+// COLORS
+// -----
+// This file is for you to set up all colors that are used in your
+// project.
+//
+// Color naming is one difficult thing that you may have faced with
+// No matter how the naming is done, is somehow doesn't seem to work
+// properly.
+//
+// APPROACH:
+// -----
+// I have adopted @LandonSchropp's approach of naming color variables.
+// You can read up on that approach here.
+// http://davidwalsh.name/sass-color-variables-dont-suck
+//
+// Here's a website to help you name your colors:
+// http://chir.ag/projects/name-that-color/
+//
+// USAGE:
+// ------
+// Use the color in any properties or variable assignments with the
+// color function:
+//
+// .test {
+//   background-color: color(shamrock);
+// }
+//
+// Check out helpers/functions.scss for more info of that function
+//
+// OPTIONAL:
+// ------
+// This approach is totally awesome if you use sublime text. Install the
+// sublime gutter color package and you can instantly see the colors you
+// used in the gutter!
+// https://sublime.wbond.net/packages/Gutter%20Color
+//
+//
+// ==========
+
+$primary: #2C444C;
+$secondary: #A67B37;
+$white: #fff;
+$black: #000;
+
+$gray5: darken($white,5%);
+$gray10: darken($white,10%);
+$gray20: darken($white,20%);
+$gray30: darken($white,30%);
+$gray40: darken($white,40%);
+$gray50: darken($white,50%);
+$gray60: darken($white,60%);
+$gray70: darken($white,70%);
+$gray80: darken($white,80%);
+$gray90: darken($white,90%);
+
+$colors: (
+  primary: $primary,
+  secondary: $secondary,
+  gray5: $gray5,
+  gray10: $gray10,
+  gray20: $gray20,
+  gray30: $gray30,
+  gray40: $gray40,
+  gray50: $gray50,
+  gray60: $gray60,
+  gray70: $gray70,
+  gray80: $gray80,
+  gray90: $gray90,
+  white: $white,
+  black: $black
+);

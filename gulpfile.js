@@ -1,5 +1,4 @@
 var gulp      = require( 'gulp' ),
-  minifycss   = require( 'gulp-minify-css' ),
   watch       = require( 'gulp-watch' ),
   uglify      = require( 'gulp-uglify' ),
   sass        = require( 'gulp-sass' ),
@@ -26,7 +25,7 @@ gulp.task( 'server', function() {
     // change 'playground' to whatever your local Nginx/Apache vhost is set
     // most commonly 'http://localhost/' or 'http://127.0.0.1/'
     // See http://www.browsersync.io/docs/options/ for more information
-    proxy: 'http://localhost:8888/bta/'
+    proxy: 'http://localhost/glhf-apparel.com/'
   });
 
   // Reload the browser if any .php file changes within this directory

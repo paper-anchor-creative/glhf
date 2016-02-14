@@ -9,7 +9,6 @@ var gulp      = require( 'gulp' ),
   concat      = require( 'gulp-concat' );
   reload      = browserSync.reload;
 
-
 // We need to set up an error handler (which gulp-plumber calls).
 // Otherwise, Gulp will exit if an error occurs, which is what we don't want.
 var onError = function( err ) {
@@ -25,7 +24,7 @@ gulp.task( 'server', function() {
     // change 'playground' to whatever your local Nginx/Apache vhost is set
     // most commonly 'http://localhost/' or 'http://127.0.0.1/'
     // See http://www.browsersync.io/docs/options/ for more information
-    proxy: 'http://localhost/glhf-apparel.com/'
+    proxy: 'http://localhost/glhf/'
   });
 
   // Reload the browser if any .php file changes within this directory

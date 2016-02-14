@@ -1,17 +1,16 @@
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
-	background-color: color(gray5);
+	float: right;
+	display: inline-block;
+	margin-right: 114px;
 
 	ul {
-		display: none;
+		display: inline-block;
 		list-style: none;
-		margin: 0;
+		margin: .8em 0 0 0;
 		padding-left: 0;
-		background-color: color(gray5);
-		width: 100%;
+		float: left;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -21,6 +20,7 @@
 			left: -999em;
 			z-index: 99999;
 			background-color: color(white);
+			display: inline-block;
 
 			ul {
 				left: -999em;
@@ -36,6 +36,7 @@
 
 			a {
 				width: 100%;
+				color: red;
 			}
 
 			:hover > a,
@@ -55,14 +56,13 @@
 	li {
 		float: left;
 		position: relative;
-		width: 100%;
 
 		&:hover > a,
 		&.focus > a {
 		}
 		
 		&:last-child a {
-			padding-bottom: 1em;
+			
 		}
 
 		&.menu-item-has-children:after {
@@ -80,10 +80,25 @@
 	a {
 		display: block;
 		text-decoration: none;
-		padding: .5em 1em;
+		padding: 1em;
+		font-size: 1.8em;
+		font-weight: 100;
+		text-transform: uppercase;
+		color: color(black);
 
 		&:hover {
 
+			&:after {
+				content: "";
+				width: 32px;
+				height: 32px;
+				background-color: color(primary);
+				position: absolute;
+				z-index: -1;
+				transform: rotate(45deg);
+				bottom: -1em;
+				left: calc(50% - 16px);
+			}
 		}
 	}
 
@@ -91,38 +106,6 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-	}
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-	background-color: color(gray10);
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.main-navigation {
-		background-color: transparent;
-
-		ul {
-			li {
-				display: inline-block;
-				width: auto;
-
-				a {
-				}
-			}
-		}
 	}
 }
 

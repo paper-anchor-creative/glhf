@@ -28,6 +28,8 @@ body {
   // Optmizes font rendering for legibility.
   // May break with some browsers, comment out as necessary.
   text-rendering: optimizeLegibility;
+  font-family: $body-font;
+  font-weight: 400;
 }
 
 // Typography styling

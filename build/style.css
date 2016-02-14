@@ -15,6 +15,8 @@
  * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
  *  `em` units.
  */
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
+@import "https://fonts.googleapis.com/css?family=Roboto:700,300,400,100";
 html {
   font-family: sans-serif;
   /* 1 */
@@ -418,7 +420,9 @@ img {
   clear: both; }
 
 body {
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
 
 h1 {
   font-size: 39px;
@@ -513,23 +517,76 @@ code {
     margin-right: -100%;
     clear: none; }
 
-.site-header {
-  background-color: #A67B37;
-  padding: 1em; }
+.site-header .site-branding {
+  display: inline-block; }
+  .site-header .site-branding a {
+    padding: 1em;
+    display: inline-block; }
+    .site-header .site-branding a img {
+      width: 145px; }
+  .site-header .site-branding .site-title {
+    position: absolute;
+    left: -999999px; }
+  .site-header .site-branding .site-description {
+    float: right;
+    font-size: 1.25em;
+    font-weight: 300;
+    color: #B9B9B9;
+    text-transform: uppercase;
+    margin-top: 2.25em; }
+
+.site-header .site-builder {
+  background-color: #2263AD;
+  display: inline-block;
+  width: 100%; }
+  .site-header .site-builder a {
+    color: #fff;
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 300ms ease;
+    height: 50px;
+    line-height: 52px;
+    vertical-align: middle; }
+    .site-header .site-builder a:hover {
+      background-color: #0D4782; }
+    .site-header .site-builder a .fa {
+      width: 20px;
+      text-align: center;
+      font-size: 1.25em; }
+    .site-header .site-builder a.shirt-builder-toggle {
+      float: right;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 300; }
+      .site-header .site-builder a.shirt-builder-toggle:after {
+        content: "\f107";
+        font-family: fontAwesome;
+        padding: 0 10px;
+        display: inline-block;
+        transition: 300ms ease all; }
+      .site-header .site-builder a.shirt-builder-toggle.open:after {
+        transform: rotate(180deg) !important; }
+
+.site-header .cart {
+  line-height: 114px;
+  font-size: 2rem;
+  color: #010101;
+  position: absolute;
+  right: 0;
+  padding: 0 50px; }
 
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
-  width: 100%;
-  background-color: #f2f2f2; }
+  float: right;
+  display: inline-block;
+  margin-right: 114px; }
   .main-navigation ul {
-    display: none;
+    display: inline-block;
     list-style: none;
-    margin: 0;
+    margin: .8em 0 0 0;
     padding-left: 0;
-    background-color: #f2f2f2;
-    width: 100%; }
+    float: left; }
     .main-navigation ul ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       float: left;
@@ -537,7 +594,8 @@ code {
       top: 1.5em;
       left: -999em;
       z-index: 99999;
-      background-color: #fff; }
+      background-color: #fff;
+      display: inline-block; }
       .main-navigation ul ul ul {
         left: -999em;
         top: 0; }
@@ -545,49 +603,41 @@ code {
       .main-navigation ul ul li.focus > ul {
         left: 100%; }
       .main-navigation ul ul a {
-        width: 100%; }
+        width: 100%;
+        color: red; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       left: auto; }
   .main-navigation li {
     float: left;
-    position: relative;
-    width: 100%; }
-    .main-navigation li:last-child a {
-      padding-bottom: 1em; }
+    position: relative; }
     .main-navigation li.menu-item-has-children:after {
       content: "+";
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
-      border-left: 1px solid #cccccc;
+      border-left: 1px solid;
       padding: 1vh 1vw;
-      cursor: pointer;
-      background-color: #f2f2f2; }
+      cursor: pointer; }
   .main-navigation a {
     display: block;
     text-decoration: none;
-    padding: .5em 1em; }
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-  background-color: #e6e6e6; }
-
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none; }
-  .main-navigation ul {
-    display: block; } }
-
-@media screen and (min-width: 1024px) {
-  .main-navigation {
-    background-color: transparent; }
-    .main-navigation ul li {
-      display: inline-block;
-      width: auto; } }
+    padding: 1em;
+    font-size: 1.8em;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #010101; }
+    .main-navigation a:hover:after {
+      content: "";
+      width: 32px;
+      height: 32px;
+      background-color: #2263AD;
+      position: absolute;
+      z-index: -1;
+      transform: rotate(45deg);
+      bottom: -1em;
+      left: calc(50% - 16px); }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -609,11 +659,10 @@ code {
   width: 50%; }
 
 .site-footer {
-  background-color: #e6e6e6;
   padding: 1em; }
 
 a {
-  color: #2C444C; }
+  color: #2263AD; }
 
 .skip-link {
   position: absolute;
